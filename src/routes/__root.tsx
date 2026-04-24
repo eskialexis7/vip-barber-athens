@@ -29,19 +29,23 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "VIP Barber Athens — Premium Κούρεμα Κατ' Οίκον | Βόρεια Προάστια" },
+      { name: "description", content: "VIP κινητός κουρέας στα Βόρεια Προάστια Αθήνας. Κομμωτήριο στο σπίτι σου — Κηφισιά, Μαρούσι, Χαλάνδρι, Εκάλη. Κλείσε ραντεβού άμεσα." },
+      { name: "keywords", content: "κομμωτηριο στο σπιτι βορεια προαστια, κινητος κουρεας αθηνα, vip barber athens, κουρεμα κατ οικον, κουρεας κηφισια, κουρεας μαρουσι" },
+      { name: "author", content: "VIP Barber Athens" },
+      { property: "og:title", content: "VIP Barber Athens — Premium Κούρεμα Κατ' Οίκον" },
+      { property: "og:description", content: "Κινητός κουρέας VIP στα Βόρεια Προάστια. Premium υπηρεσία στο χώρο σου." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&display=swap",
       },
     ],
   }),
@@ -52,7 +56,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="el" className="dark">
       <head>
         <HeadContent />
       </head>
