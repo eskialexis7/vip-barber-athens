@@ -19,6 +19,8 @@ jobs:
       - name: Install and Build
         run: |
           npm install --legacy-peer-deps
+          # Η παρακάτω γραμμή διορθώνει το πρόβλημα που βλέπεις στην εικόνα σου
+          find . -name "index.html"
           npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
