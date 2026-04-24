@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react"; // ΑΛΛΑΞΑΜΕ ΑΥΤΗ ΤΗ ΓΡΑΜΜΗ
+import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
@@ -10,4 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+  }
 });
