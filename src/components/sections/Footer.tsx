@@ -15,7 +15,7 @@ export function Footer() {
               <span className="font-display text-xl">VIP Barber</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Κινητός κουρέας premium υπηρεσίας στα Βόρεια Προάστια Αθήνας. Κούρεμα
+              VIP Barber premium υπηρεσίας στα Βόρεια Προάστια Αθήνας. Κούρεμα
               κατ' οίκον με επαγγελματισμό και διακριτικότητα.
             </p>
           </div>
