@@ -31,6 +31,7 @@ export function Hero() {
           <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">
             VIP Barber · Athens
           </span>
+          <span className="h-px w-12 bg-gradient-gold" />
         </motion.div>
 
         <motion.h1
