@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
-const AREAS = ["Κηφισιά", "Μαρούσι", "Χαλάνδρι", "Βριλήσσια", "Μελίσσια", "Εκάλη", "Νέα Ερυθραία", "Πεύκη"];
+const AREAS = ["Κηφισιά", "Μαρούσι", "Χαλάνδρι", "Βριλήσσια", "Μελίσσια", "Εκάλη", "Νέα Ερυθραία", "Πεντέλη", "Νέα Πεντέλη", "Ανθούσα", "Ντράφι"];
 const PHONE = "306975785563";
 
 // Generate 45-min slots for given day
