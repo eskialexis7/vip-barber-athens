@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, Phone } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import heroImg from "@/assets/hero-bg.png";
 
 export function Hero() {
   return (
