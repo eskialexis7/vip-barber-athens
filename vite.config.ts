@@ -1,16 +1,4 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "path";
+import { lovableTanstackConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig({
-  base: "/vip-barber-athens/",
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  build: {
-    outDir: "dist",
-  }
-});
+export default defineConfig(lovableTanstackConfig());
