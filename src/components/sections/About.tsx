@@ -62,9 +62,17 @@ export function About() {
                   VIP Κούρεμα <br /> Κατ' Οίκον
                 </h3>
                 <div className="hairline my-6" />
-                <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-6xl md:text-7xl font-bold text-gradient-gold font-display">15</span>
-                  <span className="text-3xl text-primary">€</span>
+                <div className="mb-6">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-6xl md:text-7xl font-bold text-gradient-gold font-display">15</span>
+                    <span className="text-3xl text-primary">€</span>
+                  </div>
+                  <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-primary/10 border border-primary/30">
+                    <Sparkles className="w-3.5 h-3.5 text-primary" />
+                    <span className="font-display italic text-primary tracking-wider text-sm font-semibold">
+                      20% Έκπτωση
+                    </span>
+                  </div>
                 </div>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex gap-3"><span className="text-primary">✓</span> Premium κούρεμα στο χώρο σου</li>
