@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { format } from "date-fns";
 import { el } from "date-fns/locale";
-import { CalendarIcon, Send, MapPin } from "lucide-react";
+import { CalendarIcon, MessageSquare, MapPin } from "lucide-react";
 import { z } from "zod";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -61,9 +61,12 @@ export function Booking() {
     }
     setErrors({});
     const dateStr = format(result.data.date, "dd/MM/yyyy", { locale: el });
-    const message = `Νέο Ραντεβού VIP Barber! ✂️\nΌνομα: ${name}\nΤηλέφωνο: ${phone}\nΔιεύθυνση: ${address}, ${area}\nΗμερομηνία: ${dateStr}\nΏρα: ${time}`;
-    const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+    const message = `Καλησπέρα, θα ήθελα να κλείσω ένα ραντεβού στο όνομα ${name}, στην περιοχή ${area} με διεύθυνση ${address}, την ημέρα ${dateStr} και ώρα ${time}. Υπάρχει διαθέσιμο; Ευχαριστώ.`;
+    // Use ?body= for iOS, &body= works on Android — both accept this form
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const separator = isIOS ? "&" : "?";
+    const url = `sms:+${PHONE}${separator}body=${encodeURIComponent(message)}`;
+    window.location.href = url;
   }
 
   const inputCls =
@@ -103,7 +106,7 @@ export function Booking() {
         >
           <div className="grid md:grid-cols-2 gap-5">
             <div>
-              <label className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2 block">Όνομα</label>
+              <label className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2 block">Ονοματεπώνυμο</label>
               <input className={inputCls} value={name} onChange={(e) => setName(e.target.value)} placeholder="Το όνομά σου" maxLength={80} />
               {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
             </div>
@@ -179,11 +182,11 @@ export function Booking() {
 
           <button
             type="submit"
-            className="w-full bg-gradient-gold text-primary-foreground py-4 rounded-sm font-semibold tracking-wide flex items-center justify-center gap-3 hover:shadow-[var(--shadow-gold)] hover:-translate-y-0.5 transition-all"
-            aria-label="Αποστολή ραντεβού μέσω WhatsApp"
+            className="w-full bg-gradient-gold text-primary-foreground py-5 rounded-sm font-bold tracking-[0.15em] uppercase text-sm flex items-center justify-center gap-3 hover:shadow-[var(--shadow-gold)] hover:-translate-y-0.5 transition-all"
+            aria-label="Κράτηση ραντεβού μέσω SMS"
           >
-            <Send className="w-5 h-5" />
-            Επιβεβαίωση μέσω WhatsApp
+            <MessageSquare className="w-5 h-5" />
+            Κράτηση μέσω SMS
           </button>
           <p className="text-center text-xs text-muted-foreground">
             Ωράριο: Δευ–Παρ 09:00–19:00 · Σαβ–Κυρ 10:00–17:00
