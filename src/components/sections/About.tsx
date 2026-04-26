@@ -68,9 +68,8 @@ export function About() {
                     <span className="text-3xl text-primary">€</span>
                   </div>
                   <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-primary/10 border border-primary/30">
-                    <Sparkles className="w-3.5 h-3.5 text-primary" />
                     <span className="font-display italic text-primary tracking-wider text-sm font-semibold">
-                      20% Έκπτωση
+                      25% Έκπτωση
                     </span>
                   </div>
                 </div>
